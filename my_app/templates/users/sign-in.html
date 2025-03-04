@@ -38,6 +38,10 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
+            {% if request.GET.next %}
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+
+            {% endif %}
             
 
             <button type="submit">Sign In</button>

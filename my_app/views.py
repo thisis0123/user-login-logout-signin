@@ -11,7 +11,10 @@ def sign_in(request):
         user= authenticate(username=username,password=password)
         if user is not None:
             login(request,user)
-            return redirect('/')
+            if 'next' in request.POST:
+                return redirect('my_videos:videos')
+            else:
+                return redirect('/')
             
         else:
             messages.info(request,'Sorry, your password or username is wrong!')
@@ -35,6 +38,8 @@ def sign_up(request):
         else:
             if password==password2:
                 user= User.objects.create(username=username,password=password)
+                user.set_password(password)
+                user.save()
                 login(request,user)
                 return redirect('/')
             
