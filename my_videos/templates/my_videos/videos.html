@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+
+
+{% block title %}
+
+    Videos
+
+{% endblock %}
+
+
+{% block content %}
+
+    
+    <div class="left-sidebar">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit incidunt, voluptates harum autem aliquam quasi sapiente, maxime repellat ipsa suscipit rerum quisquam laboriosam eligendi sequi totam excepturi quibusdam ex aliquid.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit incidunt, voluptates harum autem aliquam quasi sapiente, maxime repellat ipsa suscipit rerum quisquam laboriosam eligendi sequi totam excepturi quibusdam ex aliquid.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit incidunt, voluptates harum autem aliquam quasi sapiente, maxime repellat ipsa suscipit rerum quisquam laboriosam eligendi sequi totam excepturi quibusdam ex aliquid.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit incidunt, voluptates harum autem aliquam quasi sapiente, maxime repellat ipsa suscipit rerum quisquam laboriosam eligendi sequi totam excepturi quibusdam ex aliquid.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit incidunt, voluptates harum autem aliquam quasi sapiente, maxime repellat ipsa suscipit rerum quisquam laboriosam eligendi sequi totam excepturi quibusdam ex aliquid.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit incidunt, voluptates harum autem aliquam quasi sapiente, maxime repellat ipsa suscipit rerum quisquam laboriosam eligendi sequi totam excepturi quibusdam ex aliquid.</p>
+    </div>
+
+    {% for video in videos %}
+
+    
+
+        <div class="main-video-div">
+
+            <video controls height="300px" width="600px">
+                <source src={{video.videofile.url}} type="video/mp4">        
+            </video>
+            
+            <h3>{{video.title}}</h3>
+        </div>
+
+
+    
+    {% endfor %}
+
+
+
+{% endblock %}
